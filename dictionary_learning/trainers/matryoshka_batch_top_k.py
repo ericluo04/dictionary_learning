@@ -305,7 +305,8 @@ class MatryoshkaBatchTopKTrainer(SAETrainer):
         if not logging:
             return loss
         else:
-            return namedtuple("LossLog", ["x", "x_hat", "f", "losses"])(
+            return namedtuple("LossLog", ["loss", "x", "x_hat", "f", "losses"])(
+                loss,
                 x,
                 x_reconstruct,
                 f,
